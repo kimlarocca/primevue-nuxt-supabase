@@ -13,23 +13,23 @@
       <h3 class="mb-3">H3 Lorem Ipsum Dolor Sit Amet</h3>
       <h4 class="mb-3">H4 Lorem Ipsum Dolor Sit Amet</h4>
       <h5 class="mb-3">H5 Lorem Ipsum Dolor Sit Amet</h5>
-      <p class="mb-2">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores,
-        esse eum ex explicabo facere maiores minus mollitia nulla qui saepe
-        tempora veritatis. Dolore ducimus fuga provident sed temporibus. Ab,
-        perspiciatis.
+      <p class="mb-3">
+        This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Asperiores, esse eum ex explicabo facere maiores minus mollitia
+        nulla qui saepe tempora veritatis. Dolore ducimus fuga provident sed
+        temporibus. Ab, perspiciatis.
       </p>
-      <p class="mb-2">
-        <nuxt-link to="/">this is an inline link</nuxt-link>
+      <p class="mb-3">
+        <nuxt-link to="/">This is an inline link.</nuxt-link>
       </p>
-      <p class="mb-2">
+      <p class="mb-3">
         Text with a tooltip!
         <i
           class="pi pi-info-circle cursor-pointer"
           v-tooltip.right="'Here is the tooltip!'"
         />
       </p>
-      <p class="mb-2">
+      <p class="mb-3">
         Here is some <strong>bold text</strong> and some <em>italic text</em>.
       </p>
       <p class="mb-3 small">Here is a paragraph with small text.</p>
@@ -51,13 +51,15 @@
         placeholder="Select a City"
         class="mb-3"
       />
-      <div class="p-inputgroup flex-1 mb-6">
+      <InputGroup>
         <InputText placeholder="Search" />
-        <Button icon="pi pi-search" />
-      </div>
+        <InputGroupAddon>
+          <Button icon="pi pi-search" />
+        </InputGroupAddon>
+      </InputGroup>
       <divider class="my-7" />
-      <Button label="example button" class="block mb-3" />
-      <Button label="outlined button" class="block mb-3" variant="outlined" />
+      <Button label="Example Button" class="block mb-3" />
+      <Button label="Outlined Button" class="block mb-3" variant="outlined" />
       <Button label="Disabled" disabled class="block mb-3" />
       <Button
         label="Loading State"
@@ -66,16 +68,16 @@
         class="block mb-6"
       />
       <ProgressSpinner class="mb-6" />
-      <Message severity="info" class="mb-3">
+      <Message severity="info" class="mb-3" closable>
         An informative message goes here.
       </Message>
-      <Message severity="warn" class="mb-3">
+      <Message severity="warn" class="mb-3" closable>
         A warning message goes here.
       </Message>
-      <Message severity="error" class="mb-3">
+      <Message severity="error" class="mb-3" closable>
         Sorry, there was a problem logging in to your account.
       </Message>
-      <Message class="mb-3" severity="success">
+      <Message class="mb-3" severity="success" closable>
         Success! Please check your email for the magic link.
       </Message>
     </div>

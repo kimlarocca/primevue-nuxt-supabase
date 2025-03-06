@@ -715,7 +715,7 @@ const MyPreset = definePreset( Aura, {
             colorScheme: {
                 light: {
                     info: {
-                        background: "#333333",
+                        background: "{blue.500}",
                         color: '#ffffff',
                         closeButton: {
                             hoverBackground: 'rgba(255, 255, 255, 0.15)',
@@ -725,8 +725,8 @@ const MyPreset = definePreset( Aura, {
                         }
                     },
                     success: {
-                        background: "#333333",
-                        color: '{green.500}',
+                        background: "{green.500}",
+                        color: '#ffffff',
                         closeButton: {
                             hoverBackground: 'rgba(255, 255, 255, 0.15)',
                             focusRing: {
@@ -735,8 +735,8 @@ const MyPreset = definePreset( Aura, {
                         }
                     },
                     warn: {
-                        background: "#333333",
-                        color: '{yellow.500}',
+                        background: "{yellow.500}",
+                        color: '#ffffff',
                         closeButton: {
                             hoverBackground: 'rgba(255, 255, 255, 0.15)',
                             focusRing: {
@@ -745,8 +745,8 @@ const MyPreset = definePreset( Aura, {
                         }
                     },
                     error: {
-                        background: "#333333",
-                        color: '#FD5757',
+                        background: "{red.500}",
+                        color: '#ffffff',
                         closeButton: {
                             hoverBackground: 'rgba(255, 255, 255, 0.15)',
                             focusRing: {

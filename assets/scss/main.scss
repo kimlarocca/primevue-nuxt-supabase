@@ -4,6 +4,7 @@
 @use 'typography';
 @use 'transitions';
 @use 'buttons';
+@use 'forms';
 
 $medium: 768px;
 
@@ -18,10 +19,7 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     background: var(--background);
-    color: var(--text-color);
     font-family: var(--font-family);
-    font-size: var(--font-size-5);
-    font-weight: var(--font-weight);
 }
 
 img {
@@ -32,17 +30,18 @@ img {
 a,
 a:visited,
 a:active {
-    text-decoration: none;
+    text-decoration: var(--link-text-decoration);
     color: var(--link-color);
     transition: var(--transition);
 
     &:hover {
+        text-decoration: var(--link-hover-text-decoration);
         color: var(--link-hover-color);
     }
 }
 
 .container {
-    max-width: 1493px;
+    max-width: var(--max-container-width);
     margin: auto;
 }
 
@@ -51,15 +50,15 @@ a:active {
     height: 28px;
     line-height: 28px;
     text-align: center;
-    background: var(--green);
-    border-radius: 20px;
+    background: var(--tag-background);
+    color: var(--tag-color);
+    border-radius: var(--border-radius);
     padding: 0 0.75rem;
-    font-size: var(--font-size-3);
-    font-family: var(--font-family);
-    font-weight: 500;
+    font-size: var(--tag-font-size);
+    font-weight: var(--tag-font-weight);
     text-transform: uppercase;
     &.active {
-        background: var(--black);
+        background: var(--tag-background);
     }
 }
 
@@ -73,8 +72,41 @@ a:active {
     }
 }
 
+// prime vue overrides
+.p-message {
+    border-radius: var(--border-radius);
+}
+.p-message-text {
+    font-weight: 400;
+    font-size: var(--font-size-5);
+}
+.p-message-info {
+    background-color: var(--light-blue);
+    color: var(--black);
+}
+.p-message-error {
+    background-color: var(--red);
+    color: var(--white);
+}
+.p-message-warn {
+    background-color: var(--yellow);
+    color: var(--text-color);
+}
+.p-message-success {
+    background-color: var(--green);
+    color: var(--white);
+}
 .p-progressspinner-circle {
     stroke: var(--blue) !important;
+}
+.p-tooltip .p-tooltip-text {
+    background: var(--black);
+    color: var(--white);
+    font-weight: 300;
+    font-size: var(--font-size-5);
+}
+.p-divider-horizontal:before {
+    border-block-start: 1px solid var(--gray);
 }
 
 // accessibility
