@@ -59,14 +59,22 @@
       </InputGroup>
       <divider class="my-7" />
       <Button label="Example Button" class="block mb-3" />
+      <Button icon="pi pi-home" label="Button With Icon" class="mb-3 mr-2" />
+      <Button
+        icon="pi pi-check"
+        label="Button With Icon"
+        iconPos="right"
+        class="mb-3 mr-2"
+      />
+      <Button icon="pi pi-heart" aria-label="Favorite" />
       <Button label="Outlined Button" class="block mb-3" variant="outlined" />
-      <Button label="Disabled" disabled class="block mb-3" />
       <Button
         label="Loading State"
         icon="pi pi-check"
         :loading="true"
-        class="block mb-6"
+        class="mb-3"
       />
+      <Button label="Disabled" disabled class="block mb-6" />
       <ProgressSpinner class="mb-6" />
       <Message severity="info" class="mb-3" closable>
         An informative message goes here.
@@ -87,6 +95,21 @@
 <script setup>
 const selectedCity = ref()
 const cities = ref([
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM' },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
+  { name: 'Paris', code: 'PRS' },
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM' },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
+  { name: 'Paris', code: 'PRS' },
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM' },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
+  { name: 'Paris', code: 'PRS' },
   { name: 'New York', code: 'NY' },
   { name: 'Rome', code: 'RM' },
   { name: 'London', code: 'LDN' },

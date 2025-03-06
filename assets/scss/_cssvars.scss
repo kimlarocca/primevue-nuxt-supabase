@@ -52,11 +52,12 @@
     --border-radius: 20px;
     --button-background-color: var(--blue);
     --button-color: var(--white);
-    --button-font-size: var(--font-size-4);
+    --button-font-size: var(--font-size-5);
     --forms-inline-button-padding: 0 1rem;
     --forms-input-background-color: var(--light-gray);
     --forms-input-border: 1px solid #e0e0e0;
     --forms-input-color: var(--text-color);
+    --forms-input-focus-border: 1px solid var(--button-background-color);
     --forms-input-font-family: var(--font-family);
     --forms-input-font-size: var(--font-size-5);
     --forms-input-height: 40px;

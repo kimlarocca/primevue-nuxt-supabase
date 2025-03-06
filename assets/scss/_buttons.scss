@@ -37,8 +37,9 @@
     border: 1px solid var(--button-background-color);
 }
 
-.p-button .p-icon {
-    margin-right: 5px;
+.p-button-icon-only {
+    padding: 0;
+    width: var(--forms-input-height);
 }
 
 .p-button.full-width {
