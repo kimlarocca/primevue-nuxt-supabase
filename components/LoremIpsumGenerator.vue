@@ -2,8 +2,8 @@
   <div class="lorem-ipsum-generator">
     <h1 class="capitalize mb-3">{{ category }} Ipsum</h1>
 
-    <div class="flex align-items-center mb-3">
-      <p>Give me</p>
+    <div class="flex align-items-center mb-4">
+      <h3>Give me</h3>
       <InputNumber
         style="width: 60px"
         v-model="numberOfParagraphs"
@@ -11,24 +11,24 @@
         :min="1"
         class="mx-2 text-center"
       />
-      <p>paragraphs(s) that are each</p>
+      <h3>paragraphs(s) that are each</h3>
       <Select
         style="width: 130px"
         class="mx-2"
         v-model="lengthOfParagraphs"
         :options="lengthOfParagraphsOptions"
       />
-      <p>length, and</p>
+      <h3>length, and</h3>
       <Select
         style="width: 130px"
         class="mx-2"
         v-model="paragraphType"
         :options="paragraphTypeOptions"
       />
-      <p>wrap them in &lt;p&gt; tags.</p>
+      <h3>wrap them in &lt;p&gt; tags.</h3>
     </div>
 
-    <div class="flex align-items-center mb-4">
+    <div class="flex align-items-center mb-5">
       <Checkbox
         v-model="beginWith"
         inputId="beginWith"
@@ -41,13 +41,24 @@
       </label>
     </div>
 
-    <Button @click="generateLoremIpsum" label="Generate" class="mr-2" />
-    <Button
-      @click="copyToClipboard"
-      variant="outlined"
-      v-if="paragraphs.length > 0"
-      label="Copy Text"
-    />
+    <div class="flex align-items-center">
+      <Button @click="generateLoremIpsum" label="Generate" class="mr-2" />
+      <template v-if="paragraphs.length > 0">
+        <Button
+          @click="copyToClipboard"
+          variant="outlined"
+          icon="pi pi-copy"
+          aria-label="copy to clipboard"
+          class="mr-2"
+        />
+        <Button
+          @click="paragraphs = []"
+          variant="outlined"
+          icon="pi pi-times"
+          aria-label="clear the paragraphs"
+        />
+      </template>
+    </div>
 
     <div class="mt-6">
       <p
