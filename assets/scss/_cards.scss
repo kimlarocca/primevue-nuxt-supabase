@@ -1,0 +1,20 @@
+@use 'typography';
+
+.p-card {
+    background: var(--light-gray);
+    color: var(--text-color);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.p-card-title {
+    @extend .like-h4 !optional;
+}
+
+.p-card-subtitle {
+    @extend .like-p !optional;
+}
+
+.p-card-content p {
+    @extend .small !optional;
+}

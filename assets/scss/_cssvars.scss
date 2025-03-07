@@ -42,17 +42,18 @@
     --light-gray: #f5f5f5;
     --dark-gray: #808080;
     --blue: #0a84ff;
-    --light-blue: #bedeff;
-    --green: #008550;
-    --red: #b71c1c;
-    --yellow: #ffefdb;
-    --purple: #7f7caf;
+    --light-blue: #c9e4ff;
+    --green: #36b899;
+    --red: #e58383;
+    --yellow: #f3dab2;
+    --purple: #d6d6e9;
 
     --background: var(--white);
     --border-radius: 20px;
     --button-background-color: var(--blue);
     --button-color: var(--white);
     --button-font-size: var(--font-size-5);
+    --button-font-weight: 400;
     --forms-inline-button-padding: 0 1rem;
     --forms-input-background-color: var(--light-gray);
     --forms-input-border: 1px solid #e0e0e0;
@@ -60,6 +61,7 @@
     --forms-input-focus-border: 1px solid var(--button-background-color);
     --forms-input-font-family: var(--font-family);
     --forms-input-font-size: var(--font-size-5);
+    --forms-input-font-weight: 300;
     --forms-input-height: 40px;
     --forms-input-outline-color: 1px solid var(--blue);
     --forms-input-padding: 0.5rem 1rem;

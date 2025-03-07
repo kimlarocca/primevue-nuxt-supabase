@@ -88,7 +88,7 @@ td {
   }
 }
 
-p.small {
+.small {
   font-size: var(--font-size-5);
   @media all and (min-width: $medium) {
     font-size: var(--font-size-5);

@@ -5,6 +5,7 @@
 @use 'transitions';
 @use 'buttons';
 @use 'forms';
+@use 'cards';
 
 $medium: 768px;
 
@@ -86,7 +87,7 @@ a:active {
 }
 .p-message-error {
     background-color: var(--red);
-    color: var(--white);
+    color: var(--black);
 }
 .p-message-warn {
     background-color: var(--yellow);
@@ -94,7 +95,7 @@ a:active {
 }
 .p-message-success {
     background-color: var(--green);
-    color: var(--white);
+    color: var(--black);
 }
 .p-progressspinner-circle {
     stroke: var(--blue) !important;

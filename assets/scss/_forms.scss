@@ -11,7 +11,7 @@ textarea {
   background: var(--forms-input-background-color);
   font-family: var(--font-family);
   font-size: var(--forms-input-font-size);
-  font-weight: 300;
+  font-weight: var(--forms-input-font-weight);
   border-radius: var(--border-radius);
   border: var(--forms-input-border);
   height: var(--forms-input-height);
@@ -29,12 +29,29 @@ textarea {
     color: var(--text-color);
     font-family: var(--font-family);
     font-size: var(--forms-input-font-size);
-    font-weight: 300;
+    font-weight: var(--forms-input-font-weight);
     line-height: calc(var(--forms-input-height) / 2);
   }
 }
 
-// select overrides
+// checkbox
+.p-checkbox-box {
+  border: var(--forms-input-border);
+  background: var(--forms-input-background-color);
+  box-shadow: none;
+}
+
+// radio button
+.p-radiobutton-box {
+  border: var(--forms-input-border);
+  background: var(--forms-input-background-color);
+  box-shadow: none;
+}
+.p-radiobutton-checked .p-radiobutton-box .p-radiobutton-icon {
+  background: var(--button-background-color);
+}
+
+// select
 .p-select-open {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -68,7 +85,7 @@ textarea {
 .p-select-option {
   font-family: var(--font-family);
   font-size: var(--forms-input-font-size);
-  font-weight: 300;
+  font-weight: var(--forms-input-font-weight);
 }
 .p-select-option.p-focus {
   background: var(--white);
@@ -93,22 +110,14 @@ textarea {
 .p-autocomplete,
 .p-dropdown,
 .p-password {
-  width: 100%;
   line-height: calc(var(--forms-input-height) / 2);
-}
-
-.p-checkbox.p-highlight .p-checkbox-box {
-  background: var(--blue);
-  border: var(--blue);
 }
 
 .p-float-label label,
 .p-dropdown .p-dropdown-label.p-placeholder,
 label {
   font-family: var(--font-family);
-  font-size: var(--font-size-5);
-  font-weight: 300;
-  color: var(--gray);
+  font-size: var(--forms-input-font-size);
 }
 
 .p-dropdown-label {
@@ -133,5 +142,35 @@ textarea,
   &:focus,
   &:focus-visible {
     border: var(--forms-input-border);
+  }
+}
+
+.p-togglebutton {
+  font-family: var(--font-family);
+  font-size: var(--forms-input-font-size);
+  font-weight: var(--forms-input-font-weight);
+  color: var(--text-color);
+  background: var(--forms-input-background-color);
+  border: var(--forms-input-background-color);
+  &:focus,
+  &:focus-visible {
+    border: none;
+    outline: none;
+  }
+}
+.p-togglebutton-checked .p-togglebutton-content {
+  background: var(--button-background-color);
+  color: var(--button-color);
+  font-weight: var(--button-font-weight);
+}
+
+.p-toggleswitch-handle {
+  background: var(--button-background-color);
+}
+.p-toggleswitch.p-toggleswitch-checked .p-toggleswitch-slider {
+  background: var(--button-background-color);
+  border-color: var(--button-background-color);
+  .p-toggleswitch-handle {
+    background: var(--button-color);
   }
 }

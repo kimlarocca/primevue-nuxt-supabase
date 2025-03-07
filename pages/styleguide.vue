@@ -35,28 +35,83 @@
       <p class="mb-3 small">Here is a paragraph with small text.</p>
       <div class="tag mb-3">this is a tag</div>
       <Divider class="my-7" />
-      <InputText
-        placeholder="Email Address"
-        v-model="value"
-        class="block mb-3"
-      />
       <div class="mb-3">
-        <Password toggleMask placeholder="Password" v-model="value" />
+        <InputText placeholder="Email Address" v-model="value" />
       </div>
-      <InputText disabled placeholder="Disabled" class="block mb-3" />
-      <Select
-        v-model="selectedCity"
-        :options="cities"
-        optionLabel="name"
-        placeholder="Select a City"
-        class="mb-3"
-      />
-      <InputGroup>
-        <InputText placeholder="Search" />
-        <InputGroupAddon>
-          <Button icon="pi pi-search" />
-        </InputGroupAddon>
-      </InputGroup>
+      <div class="mb-3">
+        <Password
+          toggleMask
+          placeholder="Password"
+          v-model="value"
+          class="w-full"
+        />
+      </div>
+      <div class="mb-3">
+        <InputText disabled placeholder="Disabled" />
+      </div>
+      <div class="mb-3">
+        <InputNumber v-model="valueNumber" inputId="integeronly" prefix="$" />
+      </div>
+      <div class="mb-3">
+        <Select
+          v-model="selectedCity"
+          :options="cities"
+          optionLabel="name"
+          placeholder="Select a City"
+        />
+      </div>
+      <div class="mb-3">
+        <InputGroup>
+          <InputText placeholder="Search" />
+          <InputGroupAddon>
+            <Button icon="pi pi-search" />
+          </InputGroupAddon>
+        </InputGroup>
+      </div>
+      <div class="flex align-items-center mb-3">
+        <Checkbox
+          v-model="checked"
+          inputId="checkbox"
+          name="checkbox"
+          value="checkbox"
+          binary
+        />
+        <label for="checkbox" class="ml-2"> Checkbox </label>
+      </div>
+      <div class="flex flex-wrap gap-4 mb-3">
+        <div class="flex items-center gap-2">
+          <RadioButton
+            v-model="ingredient"
+            inputId="ingredient1"
+            name="pizza"
+            value="Cheese"
+          />
+          <label for="ingredient1">Cheese</label>
+        </div>
+        <div class="flex items-center gap-2">
+          <RadioButton
+            v-model="ingredient"
+            inputId="ingredient2"
+            name="pizza"
+            value="Mushroom"
+          />
+          <label for="ingredient2">Mushroom</label>
+        </div>
+        <div class="flex items-center gap-2">
+          <RadioButton
+            v-model="ingredient"
+            inputId="ingredient3"
+            name="pizza"
+            value="Pepper"
+          />
+          <label for="ingredient3">Pepper</label>
+        </div>
+      </div>
+      <Textarea v-model="value" rows="5" cols="30" class="mb-3" />
+      <div class="flex justify-center mb-3">
+        <SelectButton v-model="selectButtonValue" :options="options" />
+      </div>
+      <ToggleSwitch v-model="checked" />
       <divider class="my-7" />
       <Button label="Example Button" class="block mb-3" />
       <Button icon="pi pi-home" label="Button With Icon" class="mb-3 mr-2" />
@@ -76,6 +131,31 @@
       />
       <Button label="Disabled" disabled class="block mb-6" />
       <ProgressSpinner class="mb-6" />
+      <divider class="my-7" />
+      <Card style="width: 400px">
+        <template #header>
+          <img
+            alt="user header"
+            src="https://picsum.photos/400/300?grayscale"
+          />
+        </template>
+        <template #title>Card Example</template>
+        <template #subtitle>This is the card subtitle</template>
+        <template #content>
+          <p class="m-0">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+            sed consequuntur error repudiandae numquam deserunt quisquam
+            repellat libero asperiores earum nam nobis, culpa ratione quam
+            perferendis esse, cupiditate neque quas!
+          </p>
+        </template>
+        <template #footer>
+          <div class="flex gap-4 mt-2">
+            <Button label="Learn More" />
+          </div>
+        </template>
+      </Card>
+      <divider class="my-7" />
       <Message severity="info" class="mb-3" closable>
         An informative message goes here.
       </Message>
@@ -93,7 +173,7 @@
 </template>
 
 <script setup>
-const selectedCity = ref()
+const checked = ref(false)
 const cities = ref([
   { name: 'New York', code: 'NY' },
   { name: 'Rome', code: 'RM' },
@@ -116,5 +196,10 @@ const cities = ref([
   { name: 'Istanbul', code: 'IST' },
   { name: 'Paris', code: 'PRS' }
 ])
+const ingredient = ref('Cheese')
+const options = ref(['Long', 'Medium', 'Short'])
+const selectButtonValue = ref('Medium')
+const selectedCity = ref()
 const value = ref('sample text')
+const valueNumber = ref(12345)
 </script>
