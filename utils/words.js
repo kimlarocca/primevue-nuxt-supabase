@@ -1,5 +1,36 @@
+export const latin = [
+    'Lorem ipsum dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit',
+    'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et',
+    'dolore', 'magna', 'aliqua', 'enim', 'ad', 'minim', 'veniam', 'quis',
+    'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'ut', 'aliquip',
+    'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure', 'in',
+    'reprehenderit', 'voluptate', 'velit', 'esse', 'cillum', 'fugiat',
+    'nulla', 'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non',
+    'proident', 'sunt', 'culpa', 'qui', 'officia', 'deserunt', 'mollit',
+    'anim', 'id', 'est', 'laborum', 'ac', 'accumsan', 'adipisci', 'alias',
+    'aptent', 'arcu', 'auctor', 'augue', 'bibendum', 'blandit', 'class',
+    'congue', 'cursus', 'dapibus', 'diam', 'dictum', 'dignissim', 'egestas',
+    'eleifend', 'euismod', 'facilisi', 'facilisis', 'fames', 'fermentum',
+    'feugiat', 'fringilla', 'fusce', 'gravida', 'habitant', 'habitasse',
+    'hendrerit', 'himenaeos', 'iaculis', 'imperdiet', 'inceptos', 'integer',
+    'interdum', 'justo', 'lacinia', 'lacus', 'laoreet', 'lectus', 'ligula',
+    'litora', 'lobortis', 'luctus', 'maecenas', 'mattis', 'mauris', 'metus',
+    'molestie', 'morbi', 'nam', 'natoque', 'neque', 'netus', 'nibh', 'nisi',
+    'nisl', 'non', 'nostra', 'nulla', 'nullam', 'nunc', 'odio', 'orci',
+    'ornare', 'pellentesque', 'penatibus', 'per', 'pharetra', 'phasellus',
+    'placerat', 'platea', 'porta', 'porttitor', 'posuere', 'potenti',
+    'praesent', 'pretium', 'primis', 'proin', 'pulvinar', 'purus', 'quam',
+    'quis', 'quisque', 'rhoncus', 'ridiculus', 'risus', 'rutrum', 'sagittis',
+    'sapien', 'scelerisque', 'sed', 'sem', 'semper', 'senectus', 'sociosqu',
+    'sodales', 'sollicitudin', 'suscipit', 'suspendisse', 'taciti', 'tellus',
+    'tempor', 'tempus', 'tincidunt', 'torquent', 'tortor', 'tristique',
+    'turpis', 'ullamcorper', 'ultrices', 'ultricies', 'urna', 'ut', 'varius',
+    'vehicula', 'vel', 'velit', 'venenatis', 'vestibulum', 'vitae', 'vivamus',
+    'viverra', 'volutpat', 'vulputate'
+]
+
 export const italian = [
-    'fuggedaboutit',
+    'Fuggedaboutit',
     'little italy',
     'sicily',
     'naples',
@@ -176,7 +207,7 @@ export const italian = [
 ]
 
 export const severance = [
-    'the work is mysterious and important',
+    'The work is mysterious and important',
     'innie',
     'outie',
     'lumon industries',

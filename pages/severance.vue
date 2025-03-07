@@ -6,6 +6,6 @@
       <nuxt-link to="/severance">Severance</nuxt-link>
     </p>
     <Divider class="mt-3 mb-5" />
-    <LoremIpsumGenerator category="latin" />
+    <LoremIpsumGenerator category="severance" />
   </div>
 </template>

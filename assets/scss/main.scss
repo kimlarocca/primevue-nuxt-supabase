@@ -73,6 +73,14 @@ a:active {
     }
 }
 
+.changes-saved-toast {
+    position: fixed;
+    bottom: 0;
+    right: 25px;
+    width: 350px;
+    z-index: 1000;
+}
+
 // prime vue overrides
 .p-message {
     border-radius: var(--border-radius);
