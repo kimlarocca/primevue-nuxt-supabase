@@ -66,8 +66,7 @@
         :key="index"
         class="capitalize-first-letter mb-3"
       >
-        <span v-if="paragraphType === 'Do'">&lt;p&gt;</span>{{ paragraph
-        }}<span v-if="paragraphType === 'Do'">&lt;/p&gt;</span>
+        {{ paragraph }}
       </p>
     </div>
   </div>
@@ -163,7 +162,8 @@ const generateLoremIpsum = () => {
           paragraph.push(newWord)
         }
       }
-      return paragraph.join(' ')
+      const text = paragraph.join(' ')
+      return paragraphType.value === 'Do' ? `<p>${text}</p>` : text
     }
   )
 }
