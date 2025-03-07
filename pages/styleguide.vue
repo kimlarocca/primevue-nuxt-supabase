@@ -1,10 +1,8 @@
 <template>
   <div class="styleguide">
-    <Html lang="en">
-      <Head>
-        <Title>Styleguide</Title>
-      </Head>
-    </Html>
+    <Head>
+      <Title>Styleguide</Title>
+    </Head>
     <div class="container p-4">
       <h1>Styleguide</h1>
       <Divider class="my-7" />
