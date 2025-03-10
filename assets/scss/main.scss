@@ -7,8 +7,6 @@
 @use 'forms';
 @use 'cards';
 
-$medium: 768px;
-
 * {
     -webkit-tap-highlight-color: transparent;
 }
@@ -44,6 +42,10 @@ a:active {
 .container {
     max-width: var(--max-container-width);
     margin: auto;
+}
+
+.border-radius {
+    border-radius: var(--border-radius);
 }
 
 .tag {
@@ -96,21 +98,25 @@ a:active {
     background-color: var(--light-blue);
     color: var(--blue);
     border: 1px solid var(--blue);
+    outline-color: transparent;
 }
 .p-message-error {
     background-color: var(--light-red);
     color: var(--red);
     border: 1px solid var(--red);
+    outline-color: transparent;
 }
 .p-message-warn {
     background-color: var(--light-yellow);
     color: var(--yellow);
     border: 1px solid var(--yellow);
+    outline-color: transparent;
 }
 .p-message-success {
     background-color: var(--light-green);
     color: var(--green);
     border: 1px solid var(--green);
+    outline-color: transparent;
 }
 .p-progressspinner-circle {
     stroke: var(--blue) !important;
@@ -123,6 +129,9 @@ a:active {
 }
 .p-divider-horizontal:before {
     border-block-start: 1px solid var(--gray);
+}
+.p-rating-option-active .p-rating-icon {
+    color: var(--orange);
 }
 
 // accessibility

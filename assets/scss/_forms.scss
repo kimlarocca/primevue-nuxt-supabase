@@ -7,7 +7,7 @@ select,
 .p-select,
 textarea {
   width: 100%;
-  color: var(--text-color);
+  color: var(--forms-input-color);
   background: var(--forms-input-background-color);
   font-family: var(--font-family);
   font-size: var(--forms-input-font-size);
@@ -26,7 +26,7 @@ textarea {
 
   .p-select-label,
   &::placeholder {
-    color: var(--text-color);
+    color: var(--forms-input-color);
     font-family: var(--font-family);
     font-size: var(--forms-input-font-size);
     font-weight: var(--forms-input-font-weight);
@@ -34,11 +34,19 @@ textarea {
   }
 }
 
+textarea,
+.p-inputtextarea {
+  height: auto;
+}
+
 // checkbox
 .p-checkbox-box {
   border: var(--forms-input-border);
   background: var(--forms-input-background-color);
   box-shadow: none;
+}
+.p-checkbox-checked .p-checkbox-icon {
+  color: var(--forms-input-color);
 }
 
 // radio button
@@ -62,7 +70,7 @@ textarea {
 }
 .p-select-overlay {
   background: var(--light-gray);
-  color: var(--text-color);
+  color: var(--forms-input-color);
   border: var(--forms-input-border);
   border-top: none;
   border-top-left-radius: 0;
@@ -89,6 +97,9 @@ textarea {
 }
 .p-select-option.p-focus {
   background: var(--white);
+}
+.p-select-dropdown {
+  color: var(--forms-input-color);
 }
 
 // input group overrides
@@ -124,18 +135,6 @@ label {
   padding-top: 13px;
 }
 
-textarea,
-.p-inputtextarea {
-  background: var(--forms-input-background-color);
-  height: auto;
-  border-radius: 20px;
-  border: 1px solid var(--light-gray);
-  &:focus,
-  &:focus-visible {
-    border: var(--forms-input-border);
-  }
-}
-
 .p-calendar {
   border-radius: 20px;
   border: 1px solid var(--light-gray);
@@ -149,7 +148,7 @@ textarea,
   font-family: var(--font-family);
   font-size: var(--forms-input-font-size);
   font-weight: var(--forms-input-font-weight);
-  color: var(--text-color);
+  color: var(--forms-input-color);
   background: var(--forms-input-background-color);
   border: var(--forms-input-background-color);
   &:focus,
@@ -173,4 +172,12 @@ textarea,
   .p-toggleswitch-handle {
     background: var(--button-color);
   }
+}
+.p-toggleswitch-slider {
+  background: var(--forms-input-background-color);
+  border: var(--forms-input-border);
+}
+
+.p-selectbutton {
+  border: var(--forms-input-border);
 }

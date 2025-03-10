@@ -127,8 +127,9 @@
         :loading="true"
         class="mb-3"
       />
-      <Button label="Disabled" disabled class="block mb-6" />
-      <ProgressSpinner class="mb-6" />
+      <Button label="Disabled" disabled class="block mb-3" />
+      <ProgressSpinner class="mb-3" />
+      <Rating v-model="starRating" class="mb-3" />
       <divider class="my-7" />
       <Card style="width: 400px">
         <template #header>
@@ -198,6 +199,7 @@ const ingredient = ref('Cheese')
 const options = ref(['Long', 'Medium', 'Short'])
 const selectButtonValue = ref('Medium')
 const selectedCity = ref()
+const starRating = ref(4)
 const value = ref('sample text')
 const valueNumber = ref(12345)
 </script>

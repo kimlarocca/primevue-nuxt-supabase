@@ -1,7 +1,5 @@
 <template>
   <div class="lorem-ipsum-generator">
-    <h1 class="capitalize mb-3">{{ category }} Ipsum</h1>
-
     <div class="flex flex-wrap align-items-center mb-4">
       <h3 class="mr-2">Give me</h3>
       <InputNumber
@@ -11,7 +9,7 @@
         :min="1"
         class="mr-2 text-center"
       />
-      <h3 class="mr-2">paragraphs(s) that are each</h3>
+      <h3 class="mr-2">paragraphs(s) that are</h3>
       <Select
         style="width: 130px"
         class="mr-2"
@@ -192,9 +190,5 @@ const copyToClipboard = async () => {
 }
 .capitalize-first-letter::after {
   content: '.';
-}
-.p-inputtext,
-.p-inputnumber-input {
-  text-align: center !important;
 }
 </style>
