@@ -2,26 +2,26 @@
   <div class="lorem-ipsum-generator">
     <h1 class="capitalize mb-3">{{ category }} Ipsum</h1>
 
-    <div class="flex align-items-center mb-4">
-      <h3>Give me</h3>
+    <div class="flex flex-wrap align-items-center mb-4">
+      <h3 class="mr-2">Give me</h3>
       <InputNumber
         style="width: 60px"
         v-model="numberOfParagraphs"
         inputId="minmax"
         :min="1"
-        class="mx-2 text-center"
+        class="mr-2 text-center"
       />
-      <h3>paragraphs(s) that are each</h3>
+      <h3 class="mr-2">paragraphs(s) that are each</h3>
       <Select
         style="width: 130px"
-        class="mx-2"
+        class="mr-2"
         v-model="lengthOfParagraphs"
         :options="lengthOfParagraphsOptions"
       />
-      <h3>length, and</h3>
+      <h3 class="mr-2">length, and</h3>
       <Select
         style="width: 130px"
-        class="mx-2"
+        class="mr-2"
         v-model="paragraphType"
         :options="paragraphTypeOptions"
       />

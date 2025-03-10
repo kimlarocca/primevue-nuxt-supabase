@@ -50,6 +50,7 @@ h3,
   font-weight: 300;
   letter-spacing: 0.5px;
   color: var(--dark-green);
+  line-height: 2;
   @media all and (min-width: $medium) {
     @include typeface(primary, 10);
     letter-spacing: 0.5px;

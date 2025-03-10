@@ -48,7 +48,14 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/scss/main.scss', 'primeicons/primeicons.css', 'primeflex/primeflex.css'],
-  modules: ['@primevue/nuxt-module'],
+  modules: ['@primevue/nuxt-module', '@nuxtjs/supabase'],
+
+  supabase: {
+    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1aXl1d3psZ2dkaW9ndHhraWZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAwNzIyNTAsImV4cCI6MjAxNTY0ODI1MH0.RKUqUdBtOJPLeCnbCX9MIVESfDZ3cZt27z5S4FTl_k4',
+    url: 'https://vuiyuwzlggdiogtxkifr.supabase.co',
+    redirect: false,
+  },
+
   primevue: {
     options: {
       ripple: true,
