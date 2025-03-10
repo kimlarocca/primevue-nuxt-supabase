@@ -3,9 +3,13 @@
     <template #header>
       <img :alt="alt" :src="image" />
     </template>
-    <template #title>{{ title }}</template>
     <template #content>
-      <Rating v-model="starRating" class="mb-3" />
+      <div v-if="tags?.length > 0" class="flex align-items-center gap-2">
+        <div v-for="(tag, index) in tags" class="tag mb-1" :class="tag">
+          {{ tag }}
+        </div>
+      </div>
+      <h3 class="mb-2">{{ title }}</h3>
       <p class="mb-2">
         {{ description }}
       </p>
@@ -42,8 +46,8 @@ const props = defineProps({
     required: false,
     default: null
   },
-  rating: {
-    type: Number,
+  tags: {
+    type: Array,
     required: false,
     default: 0
   },
@@ -53,6 +57,19 @@ const props = defineProps({
     default: null
   }
 })
-
-const starRating = ref(props.rating)
 </script>
+
+<style lang="scss" scoped>
+.nsfw {
+  color: var(--red);
+  border: solid 1px var(--red);
+}
+.tv {
+  color: var(--green);
+  border: solid 1px var(--green);
+}
+.places {
+  color: var(--pink);
+  border: solid 1px var(--pink);
+}
+</style>

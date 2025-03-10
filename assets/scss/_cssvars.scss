@@ -50,7 +50,8 @@
     --yellow: #cf972f;
     --light-yellow: #fefde9;
     --orange: #f26c4f;
-    --purple: #d6d6e9;
+    --purple: #54549b;
+    --pink: #ff19c6;
 
     --background: var(--white);
     --border-radius: 20px;
@@ -80,8 +81,9 @@
     --link-hover-text-decoration: underline;
     --link-text-decoration: none;
     --opacity-on-hover: 0.7;
-    --tag-background: var(--black);
-    --tag-color: var(--white);
+    --tag-background: transparent;
+    --tag-color: var(--button-background-color);
+    --tag-border: 1px solid var(--button-background-color);
     --tag-font-size: var(--font-size-4);
     --tag-hover-background: var(--black);
     --tag-hover-color: var(--white);

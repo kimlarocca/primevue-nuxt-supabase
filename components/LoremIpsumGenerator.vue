@@ -11,7 +11,7 @@
       />
       <h3 class="mr-2">paragraphs(s) that are</h3>
       <Select
-        style="width: 130px"
+        style="width: 140px"
         class="mr-2"
         v-model="lengthOfParagraphs"
         :options="lengthOfParagraphsOptions"
@@ -130,6 +130,9 @@ if (props.category === 'italian') {
 }
 if (props.category === 'severance') {
   words.value = severance
+}
+if (props.category === 'nyc') {
+  words.value = nyc
 }
 
 const generateLoremIpsum = () => {
