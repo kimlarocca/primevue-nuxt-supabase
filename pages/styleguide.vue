@@ -183,21 +183,11 @@ const cities = ref([
   { name: 'London', code: 'LDN' },
   { name: 'Istanbul', code: 'IST' },
   { name: 'Paris', code: 'PRS' },
-  { name: 'New York', code: 'NY' },
-  { name: 'Rome', code: 'RM' },
-  { name: 'London', code: 'LDN' },
-  { name: 'Istanbul', code: 'IST' },
-  { name: 'Paris', code: 'PRS' },
-  { name: 'New York', code: 'NY' },
-  { name: 'Rome', code: 'RM' },
-  { name: 'London', code: 'LDN' },
-  { name: 'Istanbul', code: 'IST' },
-  { name: 'Paris', code: 'PRS' },
-  { name: 'New York', code: 'NY' },
-  { name: 'Rome', code: 'RM' },
-  { name: 'London', code: 'LDN' },
-  { name: 'Istanbul', code: 'IST' },
-  { name: 'Paris', code: 'PRS' }
+  { name: 'Tokyo', code: 'TKY' },
+  { name: 'Berlin', code: 'BER' },
+  { name: 'Madrid', code: 'MAD' },
+  { name: 'Moscow', code: 'MSC' },
+  { name: 'Beijing', code: 'BJS' }
 ])
 const ingredient = ref('Cheese')
 const options = ref(['Long', 'Medium', 'Short'])

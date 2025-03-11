@@ -123,7 +123,7 @@ a:active {
 .style-mode-dark .p-message-error,
 .style-mode-dark .p-message-warn,
 .style-mode-dark .p-message-success {
-    background-color: transparent;
+    background-color: var(--dark-gray);
 }
 .p-progressspinner-circle {
     stroke: var(--blue) !important;
@@ -134,10 +134,17 @@ a:active {
     font-weight: 300;
     font-size: var(--font-size-5);
 }
+.style-mode-dark .p-tooltip .p-tooltip-text {
+    background: var(--dark-gray);
+    color: var(--white);
+}
 .p-divider-horizontal:before {
     border-block-start: 1px solid var(--gray);
 }
 .p-rating-option-active .p-rating-icon {
+    color: var(--orange);
+}
+.p-rating:not(.p-disabled):not(.p-readonly) .p-rating-option:hover .p-rating-icon {
     color: var(--orange);
 }
 

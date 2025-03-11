@@ -32,6 +32,10 @@ textarea {
     font-weight: var(--forms-input-font-weight);
     line-height: calc(var(--forms-input-height) / 2);
   }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 textarea,
@@ -69,13 +73,16 @@ textarea,
   margin: -11px;
 }
 .p-select-overlay {
-  background: var(--light-gray);
+  background: var(--off-white);
   color: var(--forms-input-color);
   border: var(--forms-input-border);
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   box-shadow: none;
+}
+.style-mode-dark .p-select-overlay {
+  background: var(--dark-gray);
 }
 .p-select-list-container {
   &::-webkit-scrollbar {
@@ -96,7 +103,7 @@ textarea,
   font-weight: var(--forms-input-font-weight);
 }
 .p-select-option.p-focus {
-  background: var(--white);
+  background: var(--background);
 }
 .p-select-dropdown {
   color: var(--forms-input-color);
