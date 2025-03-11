@@ -343,7 +343,7 @@ export const severance = [
 ]
 
 export const nyc = [
-    "Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island", "Empire State Building", "Times Square",
+    "How you doin'?", "Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island", "Empire State Building", "Times Square",
     "Central Park", "Broadway", "The Met", "Statue of Liberty", "Wall Street", "The Village", "SoHo", "Tribeca",
     "Harlem", "Coney Island", "Coney Island baby", "Little Italy", "Chinatown", "The Bronx Zoo", "Yankee Stadium",
     "The Apollo", "the big apple", "NYC Subway", "hot dog", "pretzel", "bagel", "pizza", "Junior's cheesecake",
@@ -352,7 +352,7 @@ export const nyc = [
     "Broadway Show", "jazz", "hip-hop", "bodega", "yellow cab", "Brooklyn Bridge", "Flatiron Building",
     "Fifth Avenue", "Staten Island Ferry", "ice skating", "NYU", "Columbia University", "Greenwich Village",
     "East Village", "Upper East Side", "Upper West Side", "Lower East Side", "The Knicks", "New York Mets",
-    "NYPD", "FDNY", "the city that never sleeps", "How you doin'?", "Fuggedaboutit!", "C'mon, I'm walkin' here!",
+    "NYPD", "FDNY", "the city that never sleeps", "Fuggedaboutit!", "C'mon, I'm walkin' here!",
     "yo", "what's good?", "Noo Yawk", "get outta here", "schlep", "chutzpah", "Katz's Deli", "Lombardi's Pizza",
     "Halal Guys", "bodega cat", "Art Deco", "Skyscraper", "Street Art", "The High Line", "The Bowery", "The LIRR",
     "Mets", "Yankees", "Brooklyn Nets", "New York Public Library", "Hudson Yards", "Chelsea Market",
