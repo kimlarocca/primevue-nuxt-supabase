@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Lorem Forum', // default fallback title
+      title: 'PrimeVue Nuxt Supabase Boilerplate', // default fallback title
       htmlAttrs: {
         lang: 'en',
       },

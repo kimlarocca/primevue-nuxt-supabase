@@ -1,6 +1,6 @@
 <template>
   <Card>
-    <template #header>
+    <template v-if="image" #header>
       <img :alt="alt" :src="image" />
     </template>
     <template #content>
@@ -9,15 +9,15 @@
           {{ tag }}
         </div>
       </div>
-      <h3 class="mb-2">{{ title }}</h3>
-      <p class="mb-2">
+      <h3 v-if="title" class="my-1">{{ title }}</h3>
+      <p v-if="description" class="my-1">
         {{ description }}
       </p>
     </template>
     <template #footer v-if="url">
-      <div class="flex gap-4 mt-2">
+      <div class="flex gap-4 my-1">
         <nuxt-link :to="url" target="_blank">
-          <Button label="Visit Website" icon="pi pi-external-link" />
+          <Button label="Learn More" />
         </nuxt-link>
       </div>
     </template>
@@ -58,18 +58,3 @@ const props = defineProps({
   }
 })
 </script>
-
-<style lang="scss" scoped>
-.nsfw {
-  color: var(--red);
-  border: solid 1px var(--red);
-}
-.tv {
-  color: var(--green);
-  border: solid 1px var(--green);
-}
-.places {
-  color: var(--pink);
-  border: solid 1px var(--pink);
-}
-</style>

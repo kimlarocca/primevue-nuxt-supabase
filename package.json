@@ -1,5 +1,5 @@
 {
-  "name": "lorem-forum",
+  "name": "primevue-nuxt-supabase-boilerplate",
   "private": true,
   "type": "module",
   "scripts": {
