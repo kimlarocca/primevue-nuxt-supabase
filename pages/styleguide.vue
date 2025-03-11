@@ -4,7 +4,11 @@
       <Title>Styleguide</Title>
     </Head>
     <div class="container p-4">
-      <h1>Styleguide</h1>
+      <h1>
+        Styleguide
+        <i @click="setDarkMode" class="pi pi-moon clickable mr-2" />
+        <i @click="setLightMode" class="pi pi-sun clickable" />
+      </h1>
       <Divider class="my-7" />
       <h1 class="mb-3">H1 Lorem Ipsum Dolor Sit Amet</h1>
       <h2 class="mb-3">H2 Lorem Ipsum Dolor Sit Amet</h2>
@@ -23,7 +27,7 @@
       <p class="mb-3">
         Text with a tooltip!
         <i
-          class="pi pi-info-circle cursor-pointer"
+          class="pi pi-info-circle clickable"
           v-tooltip.right="'Here is the tooltip!'"
         />
       </p>
@@ -202,4 +206,13 @@ const selectedCity = ref()
 const starRating = ref(4)
 const value = ref('sample text')
 const valueNumber = ref(12345)
+
+const setDarkMode = () => {
+  document.body.classList.add('style-mode-dark')
+  document.body.classList.remove('style-mode-light')
+}
+const setLightMode = () => {
+  document.body.classList.add('style-mode-light')
+  document.body.classList.remove('style-mode-dark')
+}
 </script>

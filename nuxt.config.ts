@@ -18,18 +18,6 @@ export default defineNuxtConfig({
       ],
       link: [
         {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '32x32',
-          href: '/favicon-32x32.png'
-        },
-        {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '16x16',
-          href: '/favicon-16x16.png'
-        },
-        {
           rel: 'apple-touch-icon',
           sizes: '180x180',
           href: '/apple-touch-icon.png'
@@ -51,8 +39,8 @@ export default defineNuxtConfig({
   modules: ['@primevue/nuxt-module', '@nuxtjs/supabase'],
 
   supabase: {
-    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1aXl1d3psZ2dkaW9ndHhraWZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAwNzIyNTAsImV4cCI6MjAxNTY0ODI1MH0.RKUqUdBtOJPLeCnbCX9MIVESfDZ3cZt27z5S4FTl_k4',
-    url: 'https://vuiyuwzlggdiogtxkifr.supabase.co',
+    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnaHlmdnZuYmdpcGZrcnhqd2lhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE2Mzk3NjgsImV4cCI6MjA1NzIxNTc2OH0.pysh57Dw9QNtgauMMgJvleJZM4fUgUsF08lOg_lqvxs',
+    url: 'https://fghyfvvnbgipfkrxjwia.supabase.co',
     redirect: false,
   },
 

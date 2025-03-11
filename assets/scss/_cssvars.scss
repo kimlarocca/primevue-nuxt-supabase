@@ -37,10 +37,10 @@
     --font-weight-900: 900;
 
     --white: #ffffff;
-    --black: #121212;
+    --black: #0a192f;
     --gray: #a0a0a0;
-    --light-gray: #f5f5f5;
-    --dark-gray: #808080;
+    --light-gray: #c9d2ee;
+    --dark-gray: #182a47;
     --blue: #0a84ff;
     --light-blue: #f0f7ff;
     --green: #1ca650;
@@ -59,6 +59,8 @@
     --button-color: var(--white);
     --button-font-size: var(--font-size-5);
     --button-font-weight: 400;
+    --card-background: var(--light-gray);
+    --card-color: var(--text-color);
     --forms-inline-button-padding: 0 1rem;
     --forms-input-background-color: var(--light-gray);
     --forms-input-border: 1px solid #e0e0e0;
@@ -72,10 +74,6 @@
     --forms-input-padding: 0.5rem 1rem;
     --forms-text-area-height: 100px;
     --max-container-width: 1493px;
-    --link-button-color: var(--p-link-500);
-    --link-button-focus-shadow: 0 0 0.2rem 0.2rem var(--p-link-600);
-    --link-button-hover-color: var(--p-link-400);
-    --link-button-text-hover-decoration: underline;
     --link-color: var(--blue);
     --link-hover-color: var(--blue);
     --link-hover-text-decoration: underline;
@@ -91,4 +89,27 @@
     --tag-font-weight: var(--font-weight-400);
     --text-color: var(--black);
     --transition: all 200ms ease-out;
+}
+
+[data-style-mode='dark'],
+.style-mode-dark {
+    --background: var(--black);
+    --button-background-color: var(--blue);
+    --button-color: var(--white);
+    --button-font-size: var(--font-size-5);
+    --card-background: var(--dark-gray);
+    --card-color: var(--text-color);
+    --forms-input-background-color: var(--dark-gray);
+    --forms-input-border: 1px solid var(--dark-gray);
+    --forms-input-color: var(--text-color);
+    --forms-input-focus-border: 1px solid var(--button-background-color);
+    --forms-input-outline-color: 1px solid var(--blue);
+    --link-color: var(--blue);
+    --link-hover-color: var(--blue);
+    --tag-background: transparent;
+    --tag-color: var(--button-background-color);
+    --tag-border: 1px solid var(--button-background-color);
+    --tag-hover-background: var(--black);
+    --tag-hover-color: var(--white);
+    --text-color: var(--light-gray);
 }

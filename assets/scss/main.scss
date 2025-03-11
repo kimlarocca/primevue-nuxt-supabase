@@ -119,6 +119,12 @@ a:active {
     border: 1px solid var(--green);
     outline-color: transparent;
 }
+.style-mode-dark .p-message-info,
+.style-mode-dark .p-message-error,
+.style-mode-dark .p-message-warn,
+.style-mode-dark .p-message-success {
+    background-color: transparent;
+}
 .p-progressspinner-circle {
     stroke: var(--blue) !important;
 }

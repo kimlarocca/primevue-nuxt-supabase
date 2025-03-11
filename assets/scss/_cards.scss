@@ -1,8 +1,8 @@
 @use 'typography';
 
 .p-card {
-    background: var(--light-gray);
-    color: var(--text-color);
+    background: var(--card-background);
+    color: var(--card-color);
     overflow: hidden;
     border-radius: var(--border-radius);
 }
