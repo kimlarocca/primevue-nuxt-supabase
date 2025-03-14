@@ -34,7 +34,8 @@
       Here is some <strong>bold text</strong> and some <em>italic text</em>.
     </p>
     <p class="mb-3 small">Here is a paragraph with small text.</p>
-    <div class="tag mb-3">this is a tag</div>
+    <div class="tag mb-3 clickable">this is a tag</div>
+    <div class="tag active mb-3 clickable">active tag</div>
     <Divider class="my-7" />
     <div class="mb-3">
       <InputText placeholder="Email Address" v-model="value" />

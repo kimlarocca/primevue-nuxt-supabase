@@ -12,18 +12,8 @@
     font-weight: var(--tag-font-weight);
     text-transform: uppercase;
     &.active {
-        background: var(--tag-background);
+        background: var(--tag-active-background);
+        color: var(--tag-active-color);
+        border: var(--tag-active-border);
     }
-}
-.tag.nsfw {
-    color: var(--red);
-    border: solid 1px var(--red);
-}
-.tag.cute {
-    color: var(--purple);
-    border: solid 1px var(--purple);
-}
-.tag.food {
-    color: var(--green);
-    border: solid 1px var(--green);
 }
