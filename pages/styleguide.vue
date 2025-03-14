@@ -5,8 +5,8 @@
     </Head>
     <h1>
       Styleguide
-      <i @click="setDarkMode" class="pi pi-moon clickable mr-2" />
-      <i @click="setLightMode" class="pi pi-sun clickable" />
+      <i v-if="isDarkMode" @click="setLightMode" class="pi pi-sun clickable" />
+      <i v-else @click="setDarkMode" class="pi pi-moon clickable mr-2" />
     </h1>
     <Divider class="my-7" />
     <h1 class="mb-3">H1 Lorem Ipsum Dolor Sit Amet</h1>
@@ -180,6 +180,8 @@
 </template>
 
 <script setup>
+import { useIsDarkMode } from '~/composables/states'
+
 const checked = ref(false)
 const cities = ref([
   { name: 'New York', code: 'NY' },
@@ -195,6 +197,7 @@ const cities = ref([
 ])
 const date = ref(new Date())
 const ingredient = ref('Cheese')
+const isDarkMode = useIsDarkMode()
 const options = ref(['Long', 'Medium', 'Short'])
 const selectButtonValue = ref('Medium')
 const selectedCity = ref()
