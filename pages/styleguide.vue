@@ -34,8 +34,6 @@
       Here is some <strong>bold text</strong> and some <em>italic text</em>.
     </p>
     <p class="mb-3 small">Here is a paragraph with small text.</p>
-    <div class="tag mb-3 clickable">this is a tag</div>
-    <div class="tag active mb-3 clickable">active tag</div>
     <Divider class="my-7" />
     <div class="mb-3">
       <InputText placeholder="Email Address" v-model="value" />
@@ -136,14 +134,16 @@
     <Button icon="pi pi-external-link" size="small" class="mb-3" />
     <Button
       label="Small Outlined Button"
-      class="block"
+      class="block mb-3"
       size="small"
       variant="outlined"
     />
+    <div class="tag mb-3 clickable">this is a tag</div>
+    <div class="tag active clickable">active tag</div>
     <divider class="my-7" />
     <ProgressSpinner class="mb-3" />
     <Rating v-model="starRating" class="mb-3" />
-    <Card style="width: 400px">
+    <Card style="width: 400px" class="mb-3">
       <template #header>
         <img alt="user header" src="https://picsum.photos/400/300?grayscale" />
       </template>
@@ -193,6 +193,7 @@ const cities = ref([
   { name: 'Moscow', code: 'MSC' },
   { name: 'Beijing', code: 'BJS' }
 ])
+const date = ref(new Date())
 const ingredient = ref('Cheese')
 const options = ref(['Long', 'Medium', 'Short'])
 const selectButtonValue = ref('Medium')

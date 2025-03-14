@@ -51,15 +51,24 @@
     min-width: fit-content;
 }
 
-.p-button.small {
-    line-height: 35px;
-    height: 35px;
-    text-transform: capitalize;
-    min-width: fit-content;
-}
-
 .p-button[disabled],
 .p-button-loading {
     pointer-events: none;
     opacity: var(--opacity-on-hover);
+}
+
+.p-button-sm {
+    height: 28px;
+    line-height: 23px;
+    padding: 0 1.25rem;
+    font-size: var(--font-size-4);
+}
+
+.p-button-sm.p-button-icon-only {
+    width: 28px;
+    padding: 0;
+    .pi {
+        font-size: var(--font-size-4);
+        line-height: 28px;
+    }
 }
