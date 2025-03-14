@@ -6,6 +6,7 @@
 @use 'buttons';
 @use 'forms';
 @use 'cards';
+@use 'tags';
 
 * {
     -webkit-tap-highlight-color: transparent;
@@ -19,6 +20,8 @@ body {
     scroll-behavior: smooth;
     background: var(--background);
     font-family: var(--font-family);
+    transition: var(--transition);
+    min-height: 100vh;
 }
 
 img {
@@ -40,30 +43,13 @@ a:active {
 }
 
 .container {
+    width: 100%;
     max-width: var(--max-container-width);
     margin: auto;
 }
 
 .border-radius {
     border-radius: var(--border-radius);
-}
-
-.tag {
-    width: fit-content;
-    height: 28px;
-    line-height: 26px;
-    text-align: center;
-    background: var(--tag-background);
-    color: var(--tag-color);
-    border: var(--tag-border);
-    border-radius: var(--border-radius);
-    padding: 0 0.75rem;
-    font-size: var(--tag-font-size);
-    font-weight: var(--tag-font-weight);
-    text-transform: uppercase;
-    &.active {
-        background: var(--tag-background);
-    }
 }
 
 .cursor-pointer,
@@ -82,6 +68,13 @@ a:active {
     right: 25px;
     width: 350px;
     z-index: 1000;
+}
+
+.large-gutters > .col {
+    padding: 0 1rem;
+}
+.large-gutters > .col-fixed {
+    padding: 0 1rem;
 }
 
 // prime vue overrides
@@ -109,8 +102,8 @@ a:active {
 }
 .p-message-warn {
     background-color: var(--light-yellow);
-    color: var(--yellow);
-    border: 1px solid var(--yellow);
+    color: var(--orange);
+    border: 1px solid var(--orange);
     outline-color: transparent;
 }
 .p-message-success {
@@ -146,6 +139,15 @@ a:active {
 }
 .p-rating:not(.p-disabled):not(.p-readonly) .p-rating-option:hover .p-rating-icon {
     color: var(--orange);
+}
+.p-datatable-header-cell,
+.p-datatable-tbody > tr {
+    background: var(----forms-input-background-color);
+    border-bottom: var(--forms-input-border);
+    color: var(--text-color);
+}
+.p-datatable-tbody > tr > td {
+    border-bottom: var(--forms-input-border);
 }
 
 // accessibility
