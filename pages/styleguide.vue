@@ -53,7 +53,7 @@ const valueNumber = ref(12345)
       <p class="dark:bg-primary-600">force dark mode</p>
     </div>
     <p class="im-test">
-      Include-media example for css media queries less than md will be red
+      Include-media example for css media queries less than md will be primary blue
     </p>
 
     <p>
@@ -62,8 +62,8 @@ const valueNumber = ref(12345)
       <span class="hidden sm:inline md:hidden">sm</span>
       <span class="hidden md:inline lg:hidden">md</span>
       <span class="hidden lg:inline xl:hidden">lg</span>
-      <span class="hidden xl:inline 2xl:hidden">xl</span>
-      <span class="hidden 2xl:inline">2xl</span>
+      <span class="hidden xl:inline xxl:hidden">xl</span>
+      <span class="hidden xxl:inline">xxl</span>
     </p>
     <p>Javascript access to the Tailwind responsive sizes in the config=</p>
     <pre>{{ jsScreenSize }}</pre>
@@ -73,6 +73,21 @@ const valueNumber = ref(12345)
     </p>
     <p>
       dark: <span>{{ primaryColor.value.dark.value }}</span>
+    </p>
+
+    <p class="reduce-to-three-lines mt-4">
+      This paragraph will truncated to three lines. Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Fuga ex quisquam vero sunt exercitationem pariatur sint, qui minus
+      ut eos repellat reprehenderit dolorum delectus officia, sapiente consequatur
+      corporis reiciendis ratione. Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit. Unde quia placeat fuga dolorem libero sint molestias, vel voluptas incidunt
+      omnis nisi ratione aliquam alias cupiditate natus? Numquam rem possimus omnis. Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Tempore, libero a explicabo harum
+      ab necessitatibus in eligendi repellat aut quae non aspernatur, excepturi eveniet.
+      Rerum sapiente earum molestiae magnam quasi? Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Quam eaque quod provident nihil, praesentium sed tenetur,
+      doloribus officia placeat molestias quibusdam corrupti. Nam qui doloribus temporibus
+      commodi? Nam, fugit quae.
     </p>
 
     <Divider class="my-7" />
@@ -238,12 +253,16 @@ const valueNumber = ref(12345)
   </div>
 </template>
 <style lang="scss" scoped>
-@import "~/assets/scss/breakpoints.scss";
-@import "~/assets/scss/include-media.scss";
-@import "~/assets/scss/mixins-functions.scss";
+@use "~/assets/scss/include-media.scss" as *;
+@use "~/assets/scss/mixins-functions.scss" as *;
 .im-test {
   @include media("<md") {
-    color: red;
+    color: var(--p-primary-500);
+    font-weight: bolder;
   }
+}
+.reduce-to-three-lines {
+  @include truncate;
+  @include lineClamp(3);
 }
 </style>

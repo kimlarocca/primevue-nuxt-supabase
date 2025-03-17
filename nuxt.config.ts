@@ -35,18 +35,7 @@ export default defineNuxtConfig({
     }
   },
 
-
   css: ['primeicons/primeicons.css', '~/assets/scss/main.scss', 'tailwindcss-primeui'],
-  // vite: {
-  //   css: {
-  //     preprocessorOptions: {
-  //       scss: {
-  //         additionalData: '@use "~/assets/scss/global.scss";',
-  //       },
-  //     },
-  //   },
-  // },
-
 
   modules: ['@primevue/nuxt-module', '@nuxtjs/supabase', '@nuxtjs/tailwindcss'],
 
