@@ -5,6 +5,7 @@ import tailwindConfig from "~/tailwind.config"
 import { $dt } from "@primeuix/themes"
 
 import useDarkMode from "~/composables/useDarkMode"
+import TruncatedText from "~/assets/components/TruncatedText.vue"
 const { setDarkMode, setLightMode, isDarkMode } = useDarkMode()
 
 const fullConfig = resolveConfig(tailwindConfig)
@@ -89,6 +90,34 @@ const valueNumber = ref(12345)
       doloribus officia placeat molestias quibusdam corrupti. Nam qui doloribus temporibus
       commodi? Nam, fugit quae.
     </p>
+
+    <TruncatedText class="mt-6" :lines="2">
+      <template #content>
+        <p>
+          This paragraph will truncated to three lines. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Fuga ex quisquam vero sunt exercitationem pariatur
+          sint, qui minus ut eos repellat reprehenderit dolorum delectus officia, sapiente
+          consequatur corporis reiciendis ratione. Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Unde quia placeat fuga dolorem libero sint molestias, vel
+          voluptas incidunt omnis nisi ratione aliquam alias cupiditate natus? Numquam rem
+          possimus omnis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Tempore, libero a explicabo harum ab necessitatibus in eligendi repellat aut
+          quae non aspernatur, excepturi eveniet. Rerum sapiente earum molestiae magnam
+          quasi? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam eaque quod
+          provident nihil, praesentium sed tenetur, doloribus officia placeat molestias
+          quibusdam corrupti. Nam qui doloribus temporibus commodi? Nam, fugit quae
+        </p>
+      </template>
+      <template #button="slotProps">
+        <div class="text-center">
+          <Button
+            :label="`${slotProps.isExpanded ? 'Read less' : 'Read more'}`"
+            class="mt-2"
+            @click="slotProps.toggleExpand"
+          />
+        </div>
+      </template>
+    </TruncatedText>
 
     <Divider class="my-7" />
     <h1 class="mb-3">H1 Lorem Ipsum Dolor Sit Amet</h1>
