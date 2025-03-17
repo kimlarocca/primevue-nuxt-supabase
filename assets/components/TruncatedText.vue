@@ -10,12 +10,16 @@ const props = defineProps({
     type: Number,
     default: 0.5,
   },
+  chValue: {
+    type: Number,
+    default: 2.75,
+  },
 })
 
 const contentRef = ref<HTMLElement | null>(null)
 const maxHeight = ref<number | null>(0)
 const isExpanded = ref(false)
-const chValue = ref(2.75) // Approximate character height in 'ch' units
+const chValue = ref(props.chValue) // Approximate character height in 'ch' units
 const expandSpeed = ref("0s") // Speed of the expansion animation in seconds
 
 const toggleExpand = () => {
@@ -38,15 +42,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="text-container" :class="{ expanded: isExpanded }">
-    <div
-      ref="contentRef"
-      class="truncated-text"
-      :style="{
-        maxHeight: `${maxHeight}${isExpanded ? 'px' : 'ch'}`,
-      }"
-    >
-      <slot name="content"></slot>
+  <div>
+    <div class="text-container" :class="{ expanded: isExpanded }">
+      <div
+        ref="contentRef"
+        class="truncated-text"
+        :style="{
+          maxHeight: `${maxHeight}${isExpanded ? 'px' : 'ch'}`,
+        }"
+      >
+        <slot name="content"></slot>
+      </div>
     </div>
     <slot name="button" :toggleExpand="toggleExpand" :isExpanded="isExpanded">
       <button @click="toggleExpand">
@@ -64,6 +70,9 @@ onMounted(() => {
     .truncated-text {
       -webkit-line-clamp: none;
       line-clamp: none;
+      &::after {
+        display: none;
+      }
     }
   }
   &:not(.expanded) {
@@ -74,6 +83,8 @@ onMounted(() => {
         100% {
           -webkit-line-clamp: v-bind(lines);
           line-clamp: v-bind(lines);
+          mask: linear-gradient(to bottom, black, transparent);
+          -webkit-mask: linear-gradient(to bottom, black, transparent);
         }
       }
     }
@@ -84,9 +95,11 @@ onMounted(() => {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  position: relative;
   transition: max-height v-bind(expandSpeed) ease-in-out;
   max-height: 0;
   min-height: calc(v-bind(chValue) * v-bind(lines) * 1ch);
+  text-overflow: ellipsis;
 }
 
 button {
