@@ -22,17 +22,17 @@ const isExpanded = ref(false)
 const chValue = ref(props.chValue) // Approximate character height in 'ch' units
 const expandSpeed = ref("0s") // Speed of the expansion animation in seconds
 
-const toggleExpand = () => {
-  isExpanded.value = !isExpanded.value
-  updateMaxHeight()
-}
-
 const updateMaxHeight = () => {
   if (contentRef.value) {
     maxHeight.value = isExpanded.value
       ? contentRef.value.scrollHeight
       : props.lines * chValue.value
   }
+}
+
+const toggleExpand = () => {
+  isExpanded.value = !isExpanded.value
+  updateMaxHeight()
 }
 
 onMounted(() => {
