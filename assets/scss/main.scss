@@ -1,3 +1,6 @@
+@use 'breakpoints';
+@use 'include-media' as *;
+@use 'mixins-functions' as *;
 @use 'cssvars';
 @use 'typography';
 @use 'transitions';
