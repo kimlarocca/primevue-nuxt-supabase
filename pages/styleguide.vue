@@ -5,7 +5,6 @@ import tailwindConfig from "~/tailwind.config"
 import { $dt } from "@primeuix/themes"
 
 import useDarkMode from "~/composables/useDarkMode"
-import TruncatedText from "~/assets/components/TruncatedText.vue"
 const { setDarkMode, setLightMode, isDarkMode } = useDarkMode()
 
 const fullConfig = resolveConfig(tailwindConfig)
