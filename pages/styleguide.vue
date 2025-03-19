@@ -281,16 +281,15 @@ const valueNumber = ref(12345)
   </div>
 </template>
 <style lang="scss" scoped>
-@use "~/assets/scss/include-media.scss" as *;
-@use "~/assets/scss/mixins-functions.scss" as *;
-.im-test {
-  @include media("<md") {
-    color: var(--p-primary-500);
-    font-weight: bolder;
+  @use "~/assets/scss/abstract" as *;
+  .im-test {
+    @include media("<md") {
+      color: var(--p-primary-500);
+      font-weight: bolder;
+    }
   }
-}
-.reduce-to-three-lines {
-  @include truncate;
-  @include lineClamp(3);
-}
+  .reduce-to-three-lines {
+    @include truncate;
+    @include lineClamp(3);
+  }
 </style>
