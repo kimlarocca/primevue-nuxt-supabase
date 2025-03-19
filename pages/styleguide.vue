@@ -281,7 +281,7 @@ const valueNumber = ref(12345)
   </div>
 </template>
 <style lang="scss" scoped>
-  @use "~/assets/scss/abstract" as *;
+  @use "~/assets/scss/mixins" as *;
   .im-test {
     @include media("<md") {
       color: var(--p-primary-500);
