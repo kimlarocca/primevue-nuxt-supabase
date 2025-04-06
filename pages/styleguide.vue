@@ -38,6 +38,7 @@ const valueNumber = ref(12345)
 
 <template>
   <div class="container p-4">
+
     <Head>
       <Title>Styleguide</Title>
     </Head>
@@ -75,6 +76,10 @@ const valueNumber = ref(12345)
       dark: <span>{{ primaryColor.value.dark.value }}</span>
     </p>
 
+    <h2>Context menu (Right-click/long press)</h2>
+    <ContextMenuExample />
+
+
     <p class="reduce-to-three-lines mt-4">
       This paragraph will truncated to three lines. Lorem ipsum dolor sit amet consectetur
       adipisicing elit. Fuga ex quisquam vero sunt exercitationem pariatur sint, qui minus
@@ -109,11 +114,8 @@ const valueNumber = ref(12345)
       </template>
       <template #button="slotProps">
         <div class="text-center">
-          <Button
-            :label="`${slotProps.isExpanded ? 'Read less' : 'Read more'}`"
-            class="mt-2"
-            @click="slotProps.toggleExpand"
-          />
+          <Button :label="`${slotProps.isExpanded ? 'Read less' : 'Read more'}`" class="mt-2"
+            @click="slotProps.toggleExpand" />
         </div>
       </template>
     </TruncatedText>
@@ -155,12 +157,7 @@ const valueNumber = ref(12345)
       <InputNumber v-model="valueNumber" inputId="integeronly" prefix="$" />
     </div>
     <div class="mb-3">
-      <Select
-        v-model="selectedCity"
-        :options="cities"
-        optionLabel="name"
-        placeholder="Select a City"
-      />
+      <Select v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Select a City" />
     </div>
     <div class="mb-3">
       <InputGroup>
@@ -171,41 +168,20 @@ const valueNumber = ref(12345)
       </InputGroup>
     </div>
     <div class="flex align-items-center mb-3">
-      <Checkbox
-        v-model="checked"
-        inputId="checkbox"
-        name="checkbox"
-        value="checkbox"
-        binary
-      />
+      <Checkbox v-model="checked" inputId="checkbox" name="checkbox" value="checkbox" binary />
       <label for="checkbox" class="ml-2"> Checkbox </label>
     </div>
     <div class="flex flex-wrap gap-4 mb-3">
       <div class="flex items-center gap-2">
-        <RadioButton
-          v-model="ingredient"
-          inputId="ingredient1"
-          name="pizza"
-          value="Cheese"
-        />
+        <RadioButton v-model="ingredient" inputId="ingredient1" name="pizza" value="Cheese" />
         <label for="ingredient1">Cheese</label>
       </div>
       <div class="flex items-center gap-2">
-        <RadioButton
-          v-model="ingredient"
-          inputId="ingredient2"
-          name="pizza"
-          value="Mushroom"
-        />
+        <RadioButton v-model="ingredient" inputId="ingredient2" name="pizza" value="Mushroom" />
         <label for="ingredient2">Mushroom</label>
       </div>
       <div class="flex items-center gap-2">
-        <RadioButton
-          v-model="ingredient"
-          inputId="ingredient3"
-          name="pizza"
-          value="Pepper"
-        />
+        <RadioButton v-model="ingredient" inputId="ingredient3" name="pizza" value="Pepper" />
         <label for="ingredient3">Pepper</label>
       </div>
     </div>
@@ -217,24 +193,14 @@ const valueNumber = ref(12345)
     <divider class="my-7" />
     <Button label="Example Button" class="block mb-3" />
     <Button icon="pi pi-home" label="Button With Icon" class="mb-3 mr-2" />
-    <Button
-      icon="pi pi-check"
-      label="Button With Icon"
-      iconPos="right"
-      class="mb-3 mr-2"
-    />
+    <Button icon="pi pi-check" label="Button With Icon" iconPos="right" class="mb-3 mr-2" />
     <Button icon="pi pi-heart" aria-label="Favorite" />
     <Button label="Outlined Button" class="block mb-3" variant="outlined" />
     <Button label="Loading State" icon="pi pi-check" :loading="true" class="mb-3" />
     <Button label="Disabled" disabled class="block mb-3" />
     <Button label="small button" size="small" class="mr-2" />
     <Button icon="pi pi-external-link" size="small" class="mb-3" />
-    <Button
-      label="Small Outlined Button"
-      class="block mb-3"
-      size="small"
-      variant="outlined"
-    />
+    <Button label="Small Outlined Button" class="block mb-3" size="small" variant="outlined" />
     <Tag value="Primary"></Tag>
     <Tag severity="secondary" value="Secondary"></Tag>
     <Tag severity="success" value="Success"></Tag>
@@ -281,15 +247,17 @@ const valueNumber = ref(12345)
   </div>
 </template>
 <style lang="scss" scoped>
-  @use "~/assets/scss/mixins" as *;
-  .im-test {
-    @include media("<md") {
-      color: var(--p-primary-500);
-      font-weight: bolder;
-    }
+@use "~/assets/scss/mixins" as *;
+
+.im-test {
+  @include media("<md") {
+    color: var(--p-primary-500);
+    font-weight: bolder;
   }
-  .reduce-to-three-lines {
-    @include truncate;
-    @include lineClamp(3);
-  }
+}
+
+.reduce-to-three-lines {
+  @include truncate;
+  @include lineClamp(3);
+}
 </style>
