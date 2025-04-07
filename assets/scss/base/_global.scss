@@ -27,8 +27,7 @@ img {
 
 a {
     color: var(--p-primary-600);
-    font-weight: 600;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     text-decoration: none;
     transition:
         outline-color 0.2s,
@@ -37,6 +36,9 @@ a {
     -webkit-user-select: none; /* disable text selection */
     &:hover {
         border-bottom-color: var(--p-primary-600);
+    }
+    &.plain {
+        border-bottom: none;
     }
 }
 
