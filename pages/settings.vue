@@ -1,11 +1,7 @@
 <script setup>
 definePageMeta({
-  layout: 'default',
   middleware: 'auth'
 })
-
-const currentUser = useSupabaseUser()
-const currentUserProfile = useCurrentUserProfile()
 </script>
 
 <template>
@@ -16,8 +12,11 @@ const currentUserProfile = useCurrentUserProfile()
   </Html>
   <div>
     <h1 class="mb-4">Settings</h1>
+    <div id="image">
+      <supabase-profile-image />
+    </div>
+    <Divider class="my-8" />
     <div id="profile">
-      <supabase-profile-image :image="avatarImage || ''" class="mb-8" />
       <manage-user-profile />
     </div>
     <Divider class="my-8" />

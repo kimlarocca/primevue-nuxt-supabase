@@ -5,25 +5,18 @@ const currentUser = useSupabaseUser()
 const currentUserProfile = useCurrentUserProfile()
 const supabase = useSupabaseClient()
 
-const props = defineProps({
-  image: {
-    type: String,
-    default: '',
-    required: true
-  }
-})
-
 const uploading = ref(false)
 const errorMessage = ref()
 const successMessage = ref()
-const imageUrl = ref(props.image)
+console.log('currentUserProfile', currentUserProfile.value)
+const imageUrl = ref(currentUserProfile.value.avatar_url || null)
 
 const uploadImage = async event => {
   try {
     uploading.value = true
     const file = event.files[0]
     const fileExt = file.name.split('.').pop()
-    const filePath = `${props.userId}-${Math.random()}.${fileExt}`
+    const filePath = `${currentUser.id}-${Math.random()}.${fileExt}`
 
     const { error: uploadError } = await supabase.storage
       .from('avatars')
@@ -93,43 +86,32 @@ const deleteImage = async () => {
       alt="profile photo"
       class="mb-4"
     />
-    <p v-if="currentUser.app_metadata.provider === 'google'">
+    <p v-else class="mb-3">You have not added a profile image yet.</p>
+    <div class="flex">
+      <FileUpload
+        mode="basic"
+        :customUpload="true"
+        @uploader="uploadImage"
+        accept="image/*"
+        :maxFileSize="1000000"
+        :fileLimit="1"
+        choose-label="Browse Images"
+        :auto="true"
+        class="mr-2"
+      />
+      <Button
+        v-if="imageUrl"
+        @click="deleteImage"
+        class="p-button-rounded"
+        icon="pi pi-trash"
+      />
+    </div>
+    <p v-if="!imageUrl" class="small mt-3">
       <em>
-        You are using your <strong>{{ currentUser.email }}</strong> Google
-        account to login. To change your profile picture, you must do so through
-        your Google account.
+        Image files must be less than 1MB in size, and should ideally be a
+        square.<br />jpg, png, webp, and gif files are accepted.
       </em>
     </p>
-    <template v-else>
-      <p v-if="!imageUrl" class="mb-3">
-        You have not added a profile image yet.
-      </p>
-      <div class="flex">
-        <FileUpload
-          mode="basic"
-          :customUpload="true"
-          @uploader="uploadImage"
-          accept="image/*"
-          :maxFileSize="1000000"
-          :fileLimit="1"
-          choose-label="Browse Images"
-          :auto="true"
-          class="mr-2"
-        />
-        <Button
-          v-if="imageUrl"
-          @click="deleteImage"
-          class="p-button-rounded"
-          icon="pi pi-trash"
-        />
-      </div>
-      <p v-if="!imageUrl" class="small mt-3">
-        <em>
-          Image files must be less than 1MB in size, and should ideally be a
-          square.<br />jpg, png, webp, and gif files are accepted.
-        </em>
-      </p>
-    </template>
     <template v-if="errorMessage">
       <Message class="mt-4" severity="error">
         {{ errorMessage }}

@@ -68,6 +68,14 @@ a {
     }
 }
 
+.toast {
+    position: fixed;
+    bottom: 0;
+    right: 25px;
+    width: 350px;
+    z-index: 1000;
+}
+
 .large-gutters > .col {
     padding: 0 1rem;
 }
