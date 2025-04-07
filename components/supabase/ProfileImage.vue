@@ -8,7 +8,6 @@ const supabase = useSupabaseClient()
 const uploading = ref(false)
 const errorMessage = ref()
 const successMessage = ref()
-console.log('currentUserProfile', currentUserProfile.value)
 const imageUrl = ref(currentUserProfile.value.avatar_url || null)
 
 const uploadImage = async event => {

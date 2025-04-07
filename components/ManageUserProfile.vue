@@ -34,12 +34,14 @@ const updateProfile = async () => {
     <h4 class="mb-4">Your Profile</h4>
     <p class="mb-4">{{ currentUser?.email }}</p>
     <div class="mb-4">
-      <p class="small">Name:</p>
+      <label for="full_name" class="small mb-1">Name:</label>
       <InputText id="full_name" v-model="fullName" @change="updateProfile" />
     </div>
     <div class="mb-4">
-      <p class="small">Phone:</p>
+      <label for="phone" class="small mb-1">Phone:</label>
       <InputMask
+        id="phone"
+        type="tel"
         v-model="phone"
         date="phone"
         mask="(999) 999-9999"

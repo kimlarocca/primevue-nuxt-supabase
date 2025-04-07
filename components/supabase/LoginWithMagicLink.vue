@@ -1,32 +1,3 @@
-<template>
-  <div>
-    <template v-if="errorMessage">
-      <Message class="mb-4" severity="error">
-        Sorry, there was a problem logging in to your account:
-        {{ errorMessage }}
-      </Message>
-    </template>
-    <template v-if="successMessage">
-      <Message class="mb-4" severity="success">
-        {{ successMessage }}
-      </Message>
-    </template>
-    <form @submit.prevent="login" class="width400">
-      <div class="mb-3">
-        <InputText
-          id="magic-link-email"
-          v-model="email"
-          class="w-full"
-          type="email"
-          placeholder="Email Address"
-          required
-        />
-      </div>
-      <Button :label="label" class="w-full" type="submit" />
-    </form>
-  </div>
-</template>
-
 <script setup>
 const client = useSupabaseClient()
 const config = useRuntimeConfig()
@@ -60,3 +31,32 @@ const login = async () => {
   }
 }
 </script>
+
+<template>
+  <div>
+    <template v-if="errorMessage">
+      <Message class="mb-4" severity="error">
+        Sorry, there was a problem logging in to your account:
+        {{ errorMessage }}
+      </Message>
+    </template>
+    <template v-if="successMessage">
+      <Message class="mb-4" severity="success">
+        {{ successMessage }}
+      </Message>
+    </template>
+    <form @submit.prevent="login" class="width400">
+      <div class="mb-3">
+        <InputText
+          id="magic-link-email"
+          v-model="email"
+          class="w-full"
+          type="email"
+          placeholder="Email Address"
+          required
+        />
+      </div>
+      <Button :label="label" class="w-full" type="submit" />
+    </form>
+  </div>
+</template>

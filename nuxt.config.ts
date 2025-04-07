@@ -65,6 +65,7 @@ export default defineNuxtConfig({
     public: {
       environment: process.env.environment ?? 'local',
       supabaseAuthSignInRedirectTo: process.env.environment === 'local' ? 'http://localhost:3000' : 'https://google.com',
+      supabaseAuthSuccessRedirectTo: process.env.environment === 'local' ? 'http://localhost:3000/success' : 'https://google.com',
       supabaseKey:
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtsYmtwYXdicWF4cG10aGp5d2h6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI5MTY4NjQsImV4cCI6MjA1ODQ5Mjg2NH0.50kL1nJPG4sNj2XQaU2wnw1yKzPLzrehwzOwEv2lni8',
       supabaseUrl: 'https://klbkpawbqaxpmthjywhz.supabase.co',
