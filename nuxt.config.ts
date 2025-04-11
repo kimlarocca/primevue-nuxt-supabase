@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Heavy Petting App', // default fallback title
+      title: 'Primevue Nuxt Supabase Boilerplate', // default fallback title
       htmlAttrs: {
         lang: 'en',
       },
