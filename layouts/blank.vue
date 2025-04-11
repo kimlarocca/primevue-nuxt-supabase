@@ -1,10 +1,12 @@
 <template>
-  <div class="grid grid-cols-2">
-    <div class="background-image p-6">
+  <div class="grid md:grid-cols-2">
+    <div class="hidden md:flex items-start background-image p-6">
       <img
         src="https://placehold.co/150x70?text=logo"
         alt="heavy petting logo"
         class="rounded-border"
+        width="150"
+        height="70"
       />
     </div>
     <div class="flex items-center">
