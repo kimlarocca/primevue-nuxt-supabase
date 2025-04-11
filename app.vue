@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const { checkColorMode } = useDarkMode()
+onMounted(() => {
+  checkColorMode()
+})
+</script>
 <template>
-  <NuxtPage />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>

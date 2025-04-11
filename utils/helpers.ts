@@ -1,41 +1,32 @@
-import {
-    useIsDarkMode
-} from "~/composables/states"
-
-export const setDarkMode = () => {
-    document.body.classList.add('style-mode-dark')
-    document.body.classList.remove('style-mode-light')
-    document.cookie = 'colorMode=dark; path=/; max-age=31536000' // stores for 1 year
-    const isDarkMode = useIsDarkMode()
-    isDarkMode.value = true
-}
-
-export const setLightMode = () => {
-    document.body.classList.add('style-mode-light')
-    document.body.classList.remove('style-mode-dark')
-    document.cookie = 'colorMode=light; path=/; max-age=31536000' // stores for 1 year
-    const isDarkMode = useIsDarkMode()
-    isDarkMode.value = false
-}
-
-export const checkColorMode = () => {
-    const isDarkMode = useIsDarkMode()
-    const cookies = document.cookie.split(';')
-    const colorMode = cookies
-        .find(cookie => cookie.trim().startsWith('colorMode='))
-        ?.split('=')[1]
-    if (colorMode === 'dark') {
-        setDarkMode()
-        isDarkMode.value = true
-    } else if (colorMode === 'light') {
-        setLightMode()
-        isDarkMode.value = false
-    } else {
-        // Default to system preference if no cookie exists
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setDarkMode()
-        } else {
-            setLightMode()
-        }
+// get and set the user profile
+export const getAndSetUserProfile = async () => {
+    const currentUser = useSupabaseUser()
+    const currentUserProfile = useCurrentUserProfile()
+    const client = useSupabaseClient()
+    const {
+        data,
+        error
+    } = await client
+        .from('profiles')
+        .select('*')
+        .eq('id', currentUser.value.id)
+        .single()
+    if (error) {
+        console.error(error)
+    } else if (data) {
+        currentUserProfile.value = data
     }
+}
+
+// log out the current user
+export const logOutUser = async () => {
+    // sign out from supabase
+    const client = useSupabaseClient()
+    client.auth.signOut()
+
+    // clear the user profile
+    getAndSetUserProfile()
+
+    // redirect to the logout page
+    navigateTo('/logout')
 }

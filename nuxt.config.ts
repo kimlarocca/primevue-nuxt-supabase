@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'PrimeVue Nuxt Supabase Boilerplate', // default fallback title
+      title: 'Heavy Petting App', // default fallback title
       htmlAttrs: {
         lang: 'en',
       },
@@ -35,13 +35,18 @@ export default defineNuxtConfig({
     }
   },
 
-  css: ['~/assets/scss/main.scss', 'primeicons/primeicons.css', 'primeflex/primeflex.css'],
-  modules: ['@primevue/nuxt-module', '@nuxtjs/supabase'],
+  css: ['primeicons/primeicons.css', '~/assets/scss/main.scss', 'tailwindcss-primeui'],
+
+  modules: ['@primevue/nuxt-module', '@nuxtjs/supabase', '@nuxtjs/tailwindcss'],
 
   supabase: {
-    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnaHlmdnZuYmdpcGZrcnhqd2lhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE2Mzk3NjgsImV4cCI6MjA1NzIxNTc2OH0.pysh57Dw9QNtgauMMgJvleJZM4fUgUsF08lOg_lqvxs',
-    url: 'https://fghyfvvnbgipfkrxjwia.supabase.co',
+    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtsYmtwYXdicWF4cG10aGp5d2h6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI5MTY4NjQsImV4cCI6MjA1ODQ5Mjg2NH0.50kL1nJPG4sNj2XQaU2wnw1yKzPLzrehwzOwEv2lni8',
+    url: 'https://klbkpawbqaxpmthjywhz.supabase.co',
     redirect: false,
+  },
+
+  tailwindcss: {
+    exposeConfig: true,
   },
 
   primevue: {
@@ -50,9 +55,21 @@ export default defineNuxtConfig({
       theme: {
         preset: MyPreset,
         options: {
-          cssLayer: true
+          darkModeSelector: ".dark-mode",
         }
       }
+    }
+  },
+
+  runtimeConfig: {
+    public: {
+      environment: process.env.environment ?? 'local',
+      supabaseAuthSignInRedirectTo: process.env.environment === 'local' ? 'http://localhost:3000' : 'https://google.com',
+      supabaseAuthSuccessRedirectTo: process.env.environment === 'local' ? 'http://localhost:3000/success' : 'https://google.com',
+      supabaseKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtsYmtwYXdicWF4cG10aGp5d2h6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI5MTY4NjQsImV4cCI6MjA1ODQ5Mjg2NH0.50kL1nJPG4sNj2XQaU2wnw1yKzPLzrehwzOwEv2lni8',
+      supabaseUrl: 'https://klbkpawbqaxpmthjywhz.supabase.co',
+      supabaseAuthTokenName: 'sb-klbkpawbqaxpmthjywhz-auth-token'
     }
   }
 })

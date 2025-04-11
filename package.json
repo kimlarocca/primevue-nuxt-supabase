@@ -10,16 +10,17 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/supabase": "^1.5.0",
+    "@nuxtjs/tailwindcss": "^6.13.2",
     "@primeuix/themes": "^1.0.0",
-    "nuxt": "^3.15.4",
-    "primevue": "^4.3.1",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "@primevue/forms": "^4.3.2",
+    "nuxt": "^3.16.0",
+    "openai": "^4.91.1",
+    "tailwindcss-primeui": "^0.5.1"
   },
   "devDependencies": {
-    "@primevue/nuxt-module": "^4.3.1",
-    "primeflex": "^4.0.0",
+    "@primevue/nuxt-module": "^4.3.2",
     "primeicons": "^7.0.0",
     "sass": "^1.85.1"
   }

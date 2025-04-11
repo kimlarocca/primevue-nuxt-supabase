@@ -1,0 +1,103 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background: var(--background);
+    font-family: var(--font-family);
+    transition: var(--transition);
+    min-height: 100vh;
+    color: var(--p-text-color);
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-variant-numeric: lining-nums;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--p-primary-600);
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    transition:
+        outline-color 0.2s,
+        border-color 0.2s;
+    -webkit-touch-callout: none; /* disable the iOS long press action */
+    -webkit-user-select: none; /* disable text selection */
+    &:hover {
+        border-bottom-color: var(--p-primary-600);
+    }
+    &.plain {
+        border-bottom: none;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-container-width);
+    margin: auto;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+.no-hyphens {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+}
+
+.cursor-pointer,
+.clickable {
+    cursor: pointer;
+    opacity: 1;
+    transition: var(--transition);
+    &:hover {
+        opacity: var(--opacity-on-hover);
+    }
+}
+
+.toast {
+    position: fixed;
+    bottom: 0;
+    right: 25px;
+    width: 350px;
+    z-index: 1000;
+}
+
+.large-gutters > .col {
+    padding: 0 1rem;
+}
+.large-gutters > .col-fixed {
+    padding: 0 1rem;
+}
+
+// accessibility
+// hide outline when using a mouse but not when using a keyboard
+.js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
+}
+[data-js-focus-visible] .p-button:focus:not([data-focus-visible-added]) {
+    outline: none;
+}
+[data-js-focus-visible] .button:focus:not([data-focus-visible-added]) {
+    outline: none;
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}

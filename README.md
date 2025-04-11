@@ -1,5 +1,5 @@
 # PrimeVue Nuxt Supabase Boilerplate
-
+NODE VERSION: 22.14.0
 ## Setup
 
 Make sure to install dependencies:
