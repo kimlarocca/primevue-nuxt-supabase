@@ -25,6 +25,13 @@ onMounted(() => {
 
 <template>
   <div class="w-full p-20">
+    <img
+      src="https://placehold.co/150x70?text=logo"
+      alt="heavy petting logo"
+      class="rounded-border mb-4"
+      width="150"
+      height="70"
+    />
     <h1 class="mb-6 like-h2">Welcome Back</h1>
     <supabase-login-with-email class="mb-6" />
     <p class="small">

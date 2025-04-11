@@ -11,6 +11,13 @@ definePageMeta({
     </Head>
   </Html>
   <div class="w-full p-20">
+    <img
+      src="https://placehold.co/150x70?text=logo"
+      alt="heavy petting logo"
+      class="rounded-border mb-4"
+      width="150"
+      height="70"
+    />
     <h1 class="mb-4 like-h2">Forgot Your Password?</h1>
     <p class="mb-6">
       Enter your email address below and we'll send you a magic link you can use
